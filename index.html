@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小小老师 - 我要当老师！</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header class="header">
+            <h1>🎓 小小老师</h1>
+            <p class="subtitle">我要当老师！</p>
+        </header>
+
+        <!-- 区块1：上传区 -->
+        <section id="uploadSection" class="section">
+            <h2>📹 开始你的教学</h2>
+            
+            <div class="form-group">
+                <label for="nickname">你的昵称：</label>
+                <input type="text" id="nickname" placeholder="例如：小明老师" maxlength="10">
+            </div>
+
+            <div class="form-group">
+                <label for="topic">教学主题：</label>
+                <input type="text" id="topic" placeholder="例如：折纸飞机" maxlength="20">
+            </div>
+
+            <div class="form-group">
+                <label for="videoFile">上传教学视频：</label>
+                <input type="file" id="videoFile" accept="video/*">
+                <p class="hint">建议5分钟以内，最大100MB</p>
+            </div>
+
+            <button id="submitBtn" class="btn-primary">开始教学 🚀</button>
+        </section>
+
+        <!-- 区块2：评价报告区（初始隐藏） -->
+        <section id="reportSection" class="section hidden">
+            <h2>📝 AI学生的评价报告</h2>
+            
+            <div class="report-card">
+                <div class="greeting" id="greeting"></div>
+                
+                <div class="highlights">
+                    <h3>✨ 教学亮点</h3>
+                    <ul id="highlightsList"></ul>
+                </div>
+
+                <div class="suggestion">
+                    <h3>💡 改进建议</h3>
+                    <p id="suggestionText"></p>
+                </div>
+
+                <div class="score-badge">
+                    <div class="score">
+                        <span class="score-label">综合评分</span>
+                        <span class="score-value" id="scoreValue">0</span>
+                        <span class="score-max">/10</span>
+                    </div>
+                    <div class="badge">
+                        <span class="badge-icon" id="badgeIcon"></span>
+                        <span class="badge-name" id="badgeName"></span>
+                        <p class="badge-reason" id="badgeReason"></p>
+                    </div>
+                </div>
+
+                <div class="learned">
+                    <h3>📚 小AI学到了</h3>
+                    <p id="learnedText"></p>
+                </div>
+
+                <div class="ending" id="ending"></div>
+            </div>
+
+            <!-- 区块3：分享区 -->
+            <div class="share-section">
+                <button id="shareBtn" class="btn-secondary">生成分享卡片 📸</button>
+            </div>
+        </section>
+
+        <!-- 加载状态 -->
+        <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>小AI正在认真观看你的教学...</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
